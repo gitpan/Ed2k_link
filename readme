@@ -1,0 +1,60 @@
+Ed2k_link
+
+OOP module for creating eD2K links for file(s) and/or from string link(s).
+Correct generation of hash, AICH hash and complete hashset fields.
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+    Carp
+
+    File::Basename
+    
+    URI::Escape
+
+    Digest::MD4
+
+    Digest::SHA1
+
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Ed2k_link
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Ed2k_link
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Ed2k_link
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Ed2k_link
+
+    Search CPAN
+        http://search.cpan.org/dist/Ed2k_link/
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009 Valery Kalesnik
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+

@@ -1,0 +1,8 @@
+Build.PL
+changes
+manifest
+readme
+lib/Ed2k_link.pm
+t/00-load.t
+t/01-fr_link.t
+META.yml

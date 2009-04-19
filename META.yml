@@ -1,0 +1,25 @@
+---
+name: Ed2k_link
+version: 20090419
+author:
+  - 'Valery Kalesnik <valkoles@gmail.com>'
+abstract: module for creation and work with eD2K links
+license: perl
+requires:
+  Carp: 0
+  Digest::MD4: 0
+  Digest::SHA1: 0
+  File::Basename: 0
+  URI::Escape: 0
+build_requires:
+  Test::More: 0
+generated_by: Module::Build version 0.32
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
+provides:
+  Ed2k_link:
+    file: lib/Ed2k_link.pm
+    version: 20090419
+resources:
+  license: ~
