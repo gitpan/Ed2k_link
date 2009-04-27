@@ -2,3 +2,7 @@ Revision history for Perl module Ed2k_link
 
 20090419  2009-04-19
         First version, released on an unsuspecting world.
+
+20090427  2009-04-27
+        Some punctuation symbols in filenames aren't percent-enoded anymore (as in eMule).
+        Fixed error, which could halt your script if you have link for file < 9mb and touch full hashset (e. g. 'equal' method).

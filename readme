@@ -13,6 +13,8 @@ To install this module, run the following commands:
 	./Build test
 	./Build install
 
+You need Module::Build for installation.
+
 
 DEPENDENCIES
 

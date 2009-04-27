@@ -1,6 +1,6 @@
 ---
 name: Ed2k_link
-version: 20090419
+version: 20090427
 author:
   - 'Valery Kalesnik <valkoles@gmail.com>'
 abstract: module for creation and work with eD2K links
@@ -20,6 +20,6 @@ meta-spec:
 provides:
   Ed2k_link:
     file: lib/Ed2k_link.pm
-    version: 20090419
+    version: 20090427
 resources:
   license: ~

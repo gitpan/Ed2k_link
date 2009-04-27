@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 package Ed2k_link;
-our $VERSION = '20090419';
+our $VERSION = '20090427';
 
 use strict;
 use warnings;
@@ -70,7 +70,7 @@ sub from_file {
 
   my $self = { path_to_file => $file };
   $self -> {filename} = File::Basename::fileparse($file);
-  $self -> {escaped_filename} = uri_escape_utf8($self -> {filename});
+  $self -> {escaped_filename} = uri_escape_utf8($self -> {filename}, '^A-Za-z0-9\-_.!~*\'()\@#[]\$&+,;=');
   $self -> {size} = -s $file;
   # hashes. step 1
   my @aich_tree;
@@ -119,8 +119,6 @@ sub from_file {
   $self -> {reliable} = 1;
 
   if (ref $either) {
-#    delete $either -> {$_} for keys %$either;
-#    $either -> {$_} = $self -> {$_} for keys %$self;
     %$either = %$self;
     1;
   } else {
@@ -166,7 +164,7 @@ sub from_link {
     }
     $self -> {p} = \@t;
   }
-  $self -> {p} = $self -> {hash} if $self -> {size} < CHANK_SIZE && not exists $self -> {p};
+  $self -> {p}[0] = $self -> {hash} if $self -> {size} < CHANK_SIZE && not exists $self -> {p};
 
   # aich
   if ($link =~ m/\|h=([\d\D]*?)\|/) {
@@ -177,8 +175,6 @@ sub from_link {
   }
 
   if (ref $either) {
-#    delete $either -> {$_} for keys %$either;
-#    $either -> {$_} = $self -> {$_} for keys %$self;
     %$either = %$self;
     1;
   } else {
@@ -324,7 +320,7 @@ Ed2k_link - module for creation and work with eD2K links
 
 =head1 VERSION
 
-Version 20090419
+Version 20090427
 
 =head1 SYNOPSIS
 
