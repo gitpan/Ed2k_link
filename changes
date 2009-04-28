@@ -6,3 +6,6 @@ Revision history for Perl module Ed2k_link
 20090427  2009-04-27
         Some punctuation symbols in filenames aren't percent-enoded anymore (as in eMule).
         Fixed error, which could halt your script if you have link for file < 9mb and touch full hashset (e. g. 'equal' method).
+
+20090428  2009-04-28
+        Again percent-encoding. Previous changes brought in a serious error: percent-encoding didn't work at all.

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 package Ed2k_link;
-our $VERSION = '20090427';
+our $VERSION = '20090428';
 
 use strict;
 use warnings;
@@ -70,7 +70,13 @@ sub from_file {
 
   my $self = { path_to_file => $file };
   $self -> {filename} = File::Basename::fileparse($file);
-  $self -> {escaped_filename} = uri_escape_utf8($self -> {filename}, '^A-Za-z0-9\-_.!~*\'()\@#[]\$&+,;=');
+  # emule doesn't escape #[]@$&+,;=
+  $self -> {escaped_filename} = uri_escape_utf8($self -> {filename}, '^A-Za-z0-9\-_.!~*\'()#&+,;=');
+  # []@$
+  $self -> {escaped_filename} =~ s/%5B/[/g;
+  $self -> {escaped_filename} =~ s/%5D/]/g;
+  $self -> {escaped_filename} =~ s/%40/\@/g;
+  $self -> {escaped_filename} =~ s/%24/\$/g;
   $self -> {size} = -s $file;
   # hashes. step 1
   my @aich_tree;
@@ -320,7 +326,7 @@ Ed2k_link - module for creation and work with eD2K links
 
 =head1 VERSION
 
-Version 20090427
+Version 20090428
 
 =head1 SYNOPSIS
 
